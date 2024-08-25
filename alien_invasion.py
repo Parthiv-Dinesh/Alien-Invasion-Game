@@ -34,6 +34,14 @@ class AlienInvasion:
         while True:
             self._check_events_()
             self.ship.update()
+            self._update_bullets()
+            self._update_screen()
+            self.clock.tick(60)
+
+
+    def _update_bullets(self):
+            """Update position of bullets and get rid of old bullets"""
+            #Update bullets position
             self.bullets.update()
 
             #Get rid of bullets that disappeared.
@@ -41,9 +49,6 @@ class AlienInvasion:
                  if bullet.rect.bottom <= 0:
                     self.bullets.remove(bullet)
             
-
-            self._update_screen()
-            self.clock.tick(60)
 
     def _check_events_(self):
         """Responds to keypresses and mouse events"""
