@@ -183,6 +183,11 @@ class AlienInvasion:
          """Start a new game when the player clicks Play."""
          button_clicked = self.play_button.rect.collidepoint(mouse_pos)
          if button_clicked and not self.game_active:
+              self._start_game()
+
+    def _start_game(self):
+              """start a new game"""
+
               # Restart the game statistics.
               self.stats.reset_stats()
               self.game_active = True
@@ -210,6 +215,8 @@ class AlienInvasion:
                sys.exit()
           elif event.key == pygame.K_SPACE:
                self._fire_bullet()
+          elif (event.key == pygame.K_p) and (not self.game_active):
+               self._start_game()
 
     def _check_keyup_events(self,event):
            """respond to key release."""
