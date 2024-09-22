@@ -132,6 +132,10 @@ class AlienInvasion:
                  self._create_fleet()
                  self.settings.increase_speed()
 
+                 # increase level.
+                 self.stats.level += 1
+                 self.sb.prep_level()
+
 
     def _update_aliens(self):
          """check if the fleet is at an edge, the update the positions."""
@@ -205,6 +209,7 @@ class AlienInvasion:
               # Restart the game statistics.
               self.stats.reset_stats()
               self.sb.prep_score()
+              self.sb.prep_level()
               self.game_active = True
 
               # Get rid of any remaining bullets and aliens.
