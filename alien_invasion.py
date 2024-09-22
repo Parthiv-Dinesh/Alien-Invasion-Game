@@ -10,6 +10,7 @@ from button import Button
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+import sound_effects as se
 
 
 class AlienInvasion:
@@ -112,6 +113,8 @@ class AlienInvasion:
                     self.bullets.remove(bullet)
 
             self._check_bullet_alien_collisions()
+
+    
             
 
     def _check_bullet_alien_collisions(self):
@@ -125,6 +128,7 @@ class AlienInvasion:
                self.stats.score += self.settings.alien_points * len(aliens)
               self.sb.prep_score()
               self.sb.check_high_score()
+              se.alien_sound.play()
          
          if not self.aliens:
                # Destroy the existing bullets and create new fleet.
@@ -254,6 +258,7 @@ class AlienInvasion:
               
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+            se.bullet_sound.play()
     
 
     def _update_screen(self):
