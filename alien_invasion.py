@@ -43,6 +43,8 @@ class AlienInvasion:
 
         self._create_fleet()
 
+        self._make_difficulty_buttons()
+
         # Start Alien Invasion in an active state.
         self.game_active = False
 
@@ -181,6 +183,28 @@ class AlienInvasion:
                    # Treat this the same as if ship got hit.
                    self._ship_hit()
                    break
+              
+    def _make_difficulty_buttons(self):
+         """make buttons that allow user to select difficulty level"""
+         self.easy_button = Button(self, "Easy")
+         self.medium_button = Button(self, "Medium")
+         self.hard_button = Button(self, "Hard")
+
+         # Position buttons so they don't all overlap.
+         self.easy_button.rect.top = (
+             self.play_button.rect.top + 1.5*self.play_button.rect.height)
+         #self.easy_button._update_msg_position()
+
+         self.medium_button.rect.top = (
+             self.easy_button.rect.top + 1.5*self.easy_button.rect.height)
+         #self.medium_button._update_msg_position()
+
+         self.difficult_button.rect.top = (
+             self.medium_button.rect.top + 1.5*self.medium_button.rect.height)
+         #self.difficult_button._update_msg_position()
+
+        # Initialize the medium button to the highlighted color.
+         #self.medium_button.set_highlighted_color()
             
 
     def _check_events_(self):
