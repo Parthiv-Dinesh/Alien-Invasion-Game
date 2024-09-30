@@ -28,7 +28,7 @@ class Settings:
         # how quickly the the alien point value increase
         self.score_scale = 1.5
 
-        self.difficulty_level = 'medium'
+        self.difficulty_level = 'easy'
 
         self.initialize_dynamic_settings()
 
