@@ -327,6 +327,9 @@ class AlienInvasion:
          # Draw the play button if the game is inactive
          if not self.game_active:
               self.play_button.draw_button()
+              self.easy_button.draw_button()
+              self.medium_button.draw_button()
+              self.hard_button.draw_button()
      
          pygame.display.flip()
          
