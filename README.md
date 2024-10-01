@@ -59,5 +59,5 @@ In Alien Invasion, the player controls a spaceship that appears at the bottom ce
 <parthivdinesh5946@gmail.com> <br>
 www.linkedin.com/in/parthiv-dinesh-488883287
 
-![Alien invasion!](" "San Juan Mountains")
+![Alien invasion!](/images/Screenshot 2024-10-01 204321.png)
 
